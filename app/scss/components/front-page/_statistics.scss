@@ -1,0 +1,69 @@
+@import "../../config/vars";
+
+.front-statistics {
+  overflow: hidden;
+  background: $color__white;
+  padding: 130px 0;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../../../images/layout/background-accent-lines.png);
+  }
+  &__container {
+    position: relative;
+  }
+
+  &__menu {
+    margin-top: 90px;
+  }
+  &__menu-items {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 120px;
+  }
+  &__menu-link {
+    font-weight: 700;
+    font-size: 3.6rem;
+  }
+}
+
+.front-statistics-numbers {
+  &__items {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 100px;
+  }
+  &__value {
+    font-size: 6.0rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.4rem;
+    margin-top: 40px;
+    position: relative;
+  }
+  &__description:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -21px;
+    height: 3px;
+    width: 130px;
+    background-color: $color__accent;
+  }
+}

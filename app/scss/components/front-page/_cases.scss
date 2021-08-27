@@ -1,0 +1,33 @@
+@import "../../config/vars";
+@import "../../mixins/utilities";
+
+.cases-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+.case-item {
+  position: relative;
+  padding-bottom: 100%;
+  &__background {
+    @include background-with-picture
+  }
+  &__background-img {
+    @include background-with-picture-image
+  }
+  &__text {
+    position: absolute;
+    color: $color__dark;
+    padding: 30px 70px;
+  }
+  &--dark &__text {
+    color: $color__white;
+  }
+  &__type {
+
+  }
+  &__title {
+    margin-top: 15px;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+}

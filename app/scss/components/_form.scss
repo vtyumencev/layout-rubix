@@ -1,0 +1,98 @@
+@import "../config/vars";
+@import "../mixins/utilities";
+
+.form {
+  &__section {
+    margin-top: 30px;
+  }
+  &__section:first-child {
+    margin-top: 0;
+  }
+  &__section--double-field {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 30px;
+  }
+  &__section--title {
+    margin-top: 100px;
+  }
+  &__section-title {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  &__field {
+    position: relative;
+  }
+  &__input {
+    padding: 27px 32px;
+    border: 1px solid $color__white;
+    width: 100%;
+  }
+  &__input-textarea {
+    height: 130px;
+    max-height: 500px;
+    min-height: 80px;
+  }
+  &__input-file {
+    width: 0;
+    opacity: 0;
+    position: relative;
+  }
+  &__input-file-handler {
+    padding-left: 37px;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  &__input-file-handler:before {
+    @include background-icon-pseudo;
+    position: absolute;
+    width: 26px;
+    height: 28px;
+    left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='28' viewBox='0 0 26 28' fill='none'%3E%3Cpath d='M25.6602 10.1975C25.2088 9.74311 24.479 9.74513 24.0301 10.2019L10.1738 24.3026C8.37609 26.1221 5.45638 26.1221 3.65535 24.3001C1.85566 22.4776 1.85566 19.5224 3.65556 17.7006L17.922 3.18485C19.0444 2.04891 20.8691 2.04891 21.9946 3.18731C23.1199 4.32625 23.1199 6.17293 21.9944 7.3122L10.1759 19.2742C10.1752 19.275 10.1745 19.2759 10.1738 19.2767C9.72353 19.7299 8.99588 19.7293 8.54656 19.2745C8.09647 18.8189 8.09647 18.0806 8.54656 17.625L14.2512 11.8498C14.7013 11.3941 14.7012 10.6554 14.251 10.1998C13.8009 9.74426 13.071 9.74431 12.6209 10.2L6.91631 15.9751C5.56601 17.3418 5.56601 19.5576 6.91642 20.9244C8.26678 22.2911 10.4559 22.2911 11.8063 20.9244C11.8079 20.9228 11.8091 20.9211 11.8107 20.9195L23.6244 8.96205C25.6503 6.91155 25.6503 3.58747 23.6244 1.53697C21.5983 -0.512323 18.3144 -0.512323 16.2897 1.53697L2.02327 16.0529C-0.674746 18.7837 -0.674746 23.2159 2.02521 25.9501C4.72695 28.6833 9.106 28.6833 11.8061 25.9503L25.6646 11.8475C26.1135 11.3906 26.1115 10.6519 25.6602 10.1975Z' fill='%23F8F8F8'/%3E%3C/svg%3E");
+  }
+  &__input-file:focus + &__input-file-handler {
+    box-shadow: $focus-outline__accent;
+  }
+
+  &__section--row-radios {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  &__row-radio {
+    position: absolute;
+  }
+  &__row-radio:focus {
+    box-shadow: none;
+  }
+  &__row-radio-field {
+
+  }
+  &__row-radio-handler {
+    display: block;
+    padding: 27px 0;
+    border: 1px solid $color__white;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    margin-right: -1px;
+  }
+  &__row-radio-field:last-child &__row-radio-handler {
+    margin-right: 0;
+  }
+  &__row-radio:focus + &__row-radio-handler {
+    box-shadow: $focus-outline__accent;
+  }
+  &__row-radio:checked + &__row-radio-handler:after {
+    content: '';
+    position: absolute;
+    border: 2px solid $color__white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
